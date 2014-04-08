@@ -1,0 +1,36 @@
+﻿@model ProyectoBlog.Models.blogHome
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>blogHome</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.comentario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.comentario)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

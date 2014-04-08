@@ -1,0 +1,61 @@
+﻿@model ProyectoBlog.Models.Usuario
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Usuario</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombre)
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.biografia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.biografia)
+            @Html.ValidationMessageFor(model => model.biografia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.redesSociales)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.redesSociales)
+            @Html.ValidationMessageFor(model => model.redesSociales)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
