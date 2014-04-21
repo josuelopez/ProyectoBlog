@@ -1,0 +1,50 @@
+﻿@model MvcApplication1.Models.LoginModel
+
+@{
+  
+}
+
+<hgroup class="title">
+   
+</hgroup>
+
+<section id="loginForm">
+<h3>Ingresar al <em>BlOG</em>.</h3>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Formulario de inicio de sesión</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <div class="social-wrap b">
+        <button class="twitter" type="submit" value="Iniciar sesión"> Iniciar sesión </button>
+        </div>
+    </fieldset>
+    
+}
+</section>
+
+<section class="social" id="socialLoginForm">
+    <h3>Ingresar al <em>BlOG</em> mediante:</h3>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

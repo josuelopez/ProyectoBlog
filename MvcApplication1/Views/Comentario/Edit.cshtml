@@ -1,0 +1,53 @@
+﻿@model MvcApplication1.Models.Comentario
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Comentario</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Comentarios)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Comentarios)
+            @Html.ValidationMessageFor(model => model.Comentarios)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Estado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Estado)
+            @Html.ValidationMessageFor(model => model.Estado)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

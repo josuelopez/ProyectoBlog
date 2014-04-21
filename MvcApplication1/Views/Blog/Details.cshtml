@@ -1,0 +1,36 @@
+﻿@model MvcApplication1.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Blog</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fecha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fecha)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.contenido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contenido)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
